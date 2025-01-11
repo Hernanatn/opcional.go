@@ -34,3 +34,25 @@ func (o Opcional[T]) ValorOFunc(f func(argumentos []any) T, argumentos []any) T 
 	}
 	return o.valor
 }
+
+func CrearOpcional[T any](valor T) Opcional[T] {
+	return Opcional[T]{
+		valor,
+		false,
+	}
+}
+
+func CrearOpcionalVacio[T any]() Opcional[T] {
+	var cero T
+	return Opcional[T]{
+		cero,
+		false,
+	}
+}
+
+func NuevoOpcional[T any](valor T) *Opcional[T] {
+	return &Opcional[T]{
+		valor,
+		false,
+	}
+}
